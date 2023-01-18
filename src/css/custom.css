@@ -1,0 +1,59 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3e6595;
+  --ifm-color-primary-dark: #39588c;
+  --ifm-color-primary-darker: #375198;
+  --ifm-color-primary-darkest: #203d5b;
+  --ifm-color-primary-light: #4362ad;
+  --ifm-color-primary-lighter: #4579a2;
+  --ifm-color-primary-lightest: #4c8dde;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #5e85b5;
+  --ifm-color-primary-dark: #5978ac;
+  --ifm-color-primary-darker: #5771a8;
+  --ifm-color-primary-darkest: #507d8b;
+  --ifm-color-primary-light: #6382cd;
+  --ifm-color-primary-lighter: #6599c2;
+  --ifm-color-primary-lightest: #7cbdff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar{
+  height: 6rem;
+}
+
+.navbar-logo{
+  margin-top: -1.7rem;
+  height: 6rem !important;
+}
+
+.navbar-sidebar .navbar-logo {
+  width: 0px;
+  margin-right: -1rem;
+}
+.navbar-sidebar__brand {
+  margin-left: -1.5rem;
+}
+
+@media screen and (max-width: 996px) {
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar__items {
+    justify-content: space-between;
+    margin-right: -1rem;
+    margin-left: .5rem;
+  }
+}

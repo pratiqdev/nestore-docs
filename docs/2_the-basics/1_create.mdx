@@ -1,0 +1,71 @@
+---
+sidebar_position: 1
+sidebar_label: Create a Store
+title: Create a Store
+---
+
+## Basic Store
+
+
+Import nestore and create a store. The store is an object that contains the current values of the state. The store can hold any values, nested at any depth, that can be accessed from anywhere. The store always maintains the same reference allowing for a single-source-of-truth.
+
+Import nestore, create your store, and export it.
+
+```jsx title="myStore.js"
+import nestore from 'nestore'
+
+const nst = nestore({ 
+    logged_in: false,
+    user_name: null,
+    time: Date.now(),
+    1: 'Two',
+})
+
+export default nst
+```
+
+
+
+
+## Mutators
+
+You can also register 'in-store' mutators to keep logic and state in a central location. See 
+**[Advanced - Mutators](/docs/advanced/mutators)** for more details
+
+```jsx title="myStore.js"
+const nst = nestore({
+    error: null, 
+    logged_in: false,
+    user_name: null,
+    time: Date.now(),
+
+    getTime:    () => Date.now(),
+    setTime:    (NST) => NST.set('time', Date.now()),
+    customTime: (NST, args) => NST.set('time', args[0]),
+ // customTime: (NST, [t,]) => NST.set('time', t),
+    
+    login: async (NST, [name, pwrd]) => {
+        let user = await Users.findOne({ where: { user_name: name }})
+
+        if(!user){
+            NST.set('error', 'No user found...')
+            return false
+        }
+
+        NST.store.user_name = user.user_name
+        NST.store.logged_in = true
+
+        return user
+    }
+})
+```
+
+Nestore will expose these functions for use outside the store
+
+```jsx title="app.js"
+import nst from  './myStore.js'
+
+const user = await nst.login('AliceAware11', 'password1234')
+// await nst.login('AliceAware11', 'password1234')
+// nst.login('AliceAware11', 'password1234')
+```
