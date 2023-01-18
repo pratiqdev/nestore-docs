@@ -12,7 +12,8 @@ Nestore is state-management solution that uses event emitters and listeners to r
 and listen to the store - a plain old javascript object - inside of the nestore object.
 
 Much of the functionality and API is inspired, or *haunted*, by other similar state management solutions, like
-`valtio`, `jotai`, `redux` and `zustand` - with `valtio` being the most similar. See [](/docs/)
+`valtio`, `jotai`, `redux` and `zustand` - with `valtio` being the most similar. See the 
+**[full comparison](/docs/api/comparison)** for more details.
 
 
 ## Why would you?
