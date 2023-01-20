@@ -7,9 +7,16 @@ sidebar_label: Usage
 
 Setup is super easy - create, export and use your store. 
 
+
+
+
+
+
 ## Create a Store
 
-Import nestore and initialize with a store - an object containing your state
+Import nestore and initialize with a store - an object containing your state. See 
+**[configuration/store](/docs/api/configuration/store)** for more details
+
 
 ```jsx title="myStore.js"
 import nestore from 'nestore'
@@ -33,11 +40,32 @@ export default nst
 
 
 
+## Provide Options
+
+See **[configuration/options](/docs/api/configuration/options)** for more details
+
+
+```jsx 
+import nestore from 'nestore'
+
+const nst = nestore({
+  store: 'data',
+  // ...
+}, {
+  delimeter: '~',
+  adapters: [],
+})
+
+export default nst
+```
+
+
 
 
 ## Register Listeners
 
-Then import your store, register listeners in any location and on any path
+Then import your store, register listeners in any location and on any path. See 
+**[listeners](/docs/api/events/listeners)** for more details
 
 ```jsx
 import nst from './myStore.js'
@@ -55,9 +83,11 @@ nst.on('user', ({ key, path, value }) => {
 
 
 
+
 ## Mutate the Store
 
-Then import your store, register listeners in any location and on any path
+Mutate the store directly, or use the `set()` method to emit events for that kay/path. See 
+**[set](/docs/api/store/set)** or **[mutate](/docs/api/store/mutators)** for more details
 
 ```jsx
 import nst from './myStore.js'

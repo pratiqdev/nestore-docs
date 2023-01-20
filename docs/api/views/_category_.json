@@ -1,0 +1,10 @@
+{
+  "position": 100,
+  "label": "Views",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "title": "Views"
+  }
+}

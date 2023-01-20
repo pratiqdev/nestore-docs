@@ -1,11 +1,10 @@
 {
   "position": 100,
-  "label": "Advanced",
+  "label": "Adapters",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
-    "type": "generated-index",
-    "title": "Advanced"
+    "title": "Adapters"
   }
 }

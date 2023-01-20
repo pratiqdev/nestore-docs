@@ -1,10 +1,158 @@
 ---
 sidebar_position: 2
-sidebar_label: Access the Store
+sidebar_label: All Steps
 ---
 
-# Sequence of Steps for Docs
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import meta from '@site/meta.js'
 
+# Full Docs Walkthrough
+
+
+# Installing the Package
+
+
+Install the package with your preferred package manager, or just use **[Pnpm](https://pnpm.io/)**!
+
+
+<Tabs>
+
+<TabItem value="pnpm" label="Pnpm" default>
+<pre>
+$ pnpm add {meta.npm_package_path}
+</pre>
+</TabItem>
+
+<TabItem value="npm" label="NPM" >
+<pre>
+$ npm install {meta.npm_package_path}
+</pre>
+</TabItem>
+
+<TabItem value="yarn" label="Yarn" >
+<pre>
+$ yarn add {meta.npm_package_path}
+</pre>
+</TabItem>
+
+
+</Tabs>
+
+Or request the package from a cdn
+```jsx
+<script src="https://unpkg.com/nestore"></script>
+```
+
+Nestore depends on `lodash-es` and `eventemitter2`
+
+:::tip New deployment available
+The original package `nestore@1.1.44` has been deprecated and removed from npm and will be replaced with `nestore@0.0.45`
+and will follow standard semantic-versioning practices starting with `v0.0.45`
+:::
+
+
+
+---
+
+
+
+## Create a Store
+
+Import nestore and initialize with a store - an object containing your state. See 
+**[configuration/store](/docs/api/configuration/store)** for more details
+
+
+```jsx title="myStore.js"
+import nestore from 'nestore'
+
+const nst = nestore({
+
+  logged_in: false,
+  user: null,
+  messages: [],
+
+  login: (NST, [name, password]) => {
+    NST.set('logged_in', true)
+    NST.store.user = name
+  }
+
+})
+```
+
+
+
+
+## Provide Options
+
+See **[configuration/options](/docs/api/configuration/options)** for more details
+
+```jsx 
+const nst = nestore(initialStore, {
+  delimeter: '~',
+  adapters: [],
+})
+
+export default nst
+```
+
+
+
+
+
+## Import Anywhere
+
+Import your store and use it anywhere to access data or trigger events. See **[useNestore](/docs/api/react/getting-started)** 
+for usage with **React**
+
+```jsx title="app.js"
+import nst from 'myStore.js'
+
+nst.set({
+    newStore: 'Yup',
+    emitEvent: 'only on new keys or keys with same path'
+})
+```
+
+
+
+
+
+## Register Listeners
+
+Register listeners in any location and on any path. See 
+**[listeners](/docs/api/events/listeners)** for more details
+
+```jsx
+nst.on('logged_in', ({ key, path, value }) => {
+    value && console.log(`Logged in!`)
+})
+```
+
+
+
+
+
+
+## Mutate the Store
+
+Use the `set()` method to update or set a value and emit events for that kay/path, or mutate the store
+directly without emitting events. See **[set](/docs/api/store/set)** or 
+**[mutate](/docs/api/store/mutators)** for more details
+
+```jsx
+nst.set('logged_in', false)
+nst.store.nonsense_value = 'No event emitted!'
+
+
+nst.login('Alice', '1234')
+nst.set('messages', [...messages])
+```
+
+
+
+
+---
 
 1. install
 1. create basic store in store.js
