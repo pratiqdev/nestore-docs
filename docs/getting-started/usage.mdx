@@ -35,23 +35,40 @@ export default nst
 
 
 
-## Import the Store
+## Register Listeners
 
-Then import your store, register listeners on any path, and interact with the store
+Then import your store, register listeners in any location and on any path
 
-```jsx title="app.js"
+```jsx
 import nst from './myStore.js'
+
+nst.once('@ready', ({ key, path, value }) => {
+    console.log(`Nestore initialized...`)
+})
 
 nst.on('user', ({ key, path, value }) => {
     console.log(`Logged in as ${value}`)
 })
-
-nst.login('Alice', '1234')
-nst.set('messages', [...messages])
 ```
 
 
 
+
+
+## Mutate the Store
+
+Then import your store, register listeners in any location and on any path
+
+```jsx
+import nst from './myStore.js'
+
+nst.store.user = null       // no emit
+nst.store.logged_in = false // no emit
+
+
+nst.login('Alice', '1234')
+nst.set('messages', [...messages])
+```
 
 
 

@@ -4,12 +4,11 @@ sidebar_label: Create a Store
 title: Create a Store
 ---
 
-## Basic Store
+## Initial Store
 
 
-Import nestore and create a store. The store is an object that contains the current values of the state. The store can hold any values, nested at any depth, that can be accessed from anywhere. The store always maintains the same reference allowing for a single-source-of-truth.
-
-Import nestore, create your store, and export it.
+Invoke nestore with an object with any keys/values to setup the initial state. See 
+**[api/store](/docs/api/configuration/store)** for more details
 
 ```jsx title="myStore.js"
 import nestore from 'nestore'
@@ -30,9 +29,9 @@ export default nst
 ## Mutators
 
 You can also register 'in-store' mutators to keep logic and state in a central location. See 
-**[Advanced - Mutators](/docs/api/mutators)** for more details
+**[api/store/mutators](/docs/api/store/mutators)** for more details
 
-```jsx title="myStore.js"
+```jsx
 const nst = nestore({
     error: null, 
     logged_in: false,
@@ -42,8 +41,8 @@ const nst = nestore({
     getTime:    () => Date.now(),
     setTime:    (NST) => NST.set('time', Date.now()),
     customTime: (NST, args) => NST.set('time', args[0]),
- // customTime: (NST, [t,]) => NST.set('time', t),
     
+    // highlight-start
     login: async (NST, [name, pwrd]) => {
         let user = await Users.findOne({ where: { user_name: name }})
 
@@ -57,15 +56,46 @@ const nst = nestore({
 
         return user
     }
+    // highlight-end
+
 })
 ```
 
 Nestore will expose these functions for use outside the store
 
-```jsx title="app.js"
+```jsx
 import nst from  './myStore.js'
 
 const user = await nst.login('AliceAware11', 'password1234')
 // await nst.login('AliceAware11', 'password1234')
 // nst.login('AliceAware11', 'password1234')
+```
+
+
+
+
+
+
+## Listeners
+
+Listeners can also be registered directly in the store with the `$` prefix. All listeners are 
+invoked with an object containing the `path` and `key` of the value that changed, as well as the 
+new value. See **[api/store/listeners](/docs/api/store/listeners)** for more details
+
+```jsx
+const nst = nestore({
+    logged_in: false,
+    user_name: null,
+
+    login: async (NST, [name, pwrd]) => {
+        // ...
+    },
+
+    // highlight-start
+    $user_name: ({ value }) => {
+        console.log(`The user ${value} has logged in!`)
+    },
+    // highlight-end
+
+})
 ```

@@ -100,7 +100,7 @@ function Feature({code, title, description, idx, link}) {
   return (
     <section className={styles.features}>
       <div className={styles.description}>
-        <a style={{color: 'inherit', textDecoration: 'underline'}} href={link}><h3>{title}</h3></a>
+        <a style={{color: 'inherit'}} href={link}><h3>{title}</h3></a>
         <p>{description}</p>
       </div>
         <CodeBlock

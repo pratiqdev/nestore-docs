@@ -13,7 +13,7 @@ and listen to the store - a plain old javascript object - inside of the nestore 
 
 Much of the functionality and API is inspired, or *haunted*, by other similar state management solutions, like
 `valtio`, `jotai`, `redux` and `zustand` - with `valtio` being the most similar. See the 
-**[full comparison](/docs/api/comparison)** for more details.
+**[full comparison](/docs/api/advanced/comparison)** for more details.
 
 
 ## Why would you?
@@ -31,4 +31,4 @@ The are many other state-management solutions that likely contain the features t
 requirements of any project - as well as being more mature, well-tested and backed by large communities
 of developers and users. 
 
-Check out the **[full comparison](/docs/api/comparison)** to see if this is the right choice for your project.
+Check out the **[full comparison](/docs/api/advanced/comparison)** to see if this is the right choice for your project.
