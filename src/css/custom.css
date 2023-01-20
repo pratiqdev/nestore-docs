@@ -154,3 +154,7 @@ b3ccff
 .menu {
   padding-top: 1rem !important;
 }
+
+.navbar-sidebar * {
+  color: var(--grey-0) !important;
+}
