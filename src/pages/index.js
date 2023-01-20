@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageExamples from '@site/src/components/HomepageExamples';
 import Head from '@docusaurus/Head';
 
 import styles from './index.module.css';
@@ -16,26 +17,29 @@ function HomepageHeader() {
         <meta property="og:description" content="My custom description" />
         <meta charSet="utf-8" />
         <title>nestore | Welcome!</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        {/* <link rel="canonical" href="http://nestore-docs.vercel.app" /> */}
       </Head>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button-- button--lg"
+            className="button button--primary button--md"
+            style={{marginRight: '1rem', borderColor: '#fff', minWidth: '10rem'}}
             to="/docs/intro">
             Introduction
           </Link>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
+            className="button button--secondary button--md"
+            style={{ minWidth: '14rem'}}
+            to="/docs/getting-started/installation">
             Getting Started
           </Link>
           <Link
-            className="button button button--lg"
-            to="/docs/intro">
-            Examples&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            className="button button--primary button--md"
+            style={{marginLeft: '1rem', borderColor: '#fff', minWidth: '10rem'}}
+            to="/docs/category/examples">
+            Examples
           </Link>
         </div>
       </div>
@@ -51,7 +55,8 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        {/* <HomepageFeatures /> */}
+        <HomepageFeatures />
+        <HomepageExamples />
       </main>
     </Layout>
   );

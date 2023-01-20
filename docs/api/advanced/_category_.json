@@ -1,0 +1,11 @@
+{
+  "position": 100,
+  "label": "Advanced",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Advanced"
+  }
+}
