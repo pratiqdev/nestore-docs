@@ -1,10 +1,10 @@
 {
   "position": 100,
-  "label": "React",
+  "label": "Meta",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
-    "title": "React"
+    "title": "Meta"
   }
 }

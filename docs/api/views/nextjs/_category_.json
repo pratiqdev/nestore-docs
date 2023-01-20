@@ -1,10 +1,10 @@
 {
   "position": 100,
-  "label": "React",
+  "label": "Next",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
-    "title": "React"
+    "title": "Next"
   }
 }
