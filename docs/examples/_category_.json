@@ -1,8 +1,0 @@
-{
-  "label": "Examples",
-  "position": 101,
-  "link": {
-    "type": "generated-index",
-    "description": "Explore how to create a store with key-values, in store setters and listeners."
-  }
-}

@@ -16,7 +16,7 @@ function HomepageHeader() {
       <Head>
         <meta property="og:description" content="My custom description" />
         <meta charSet="utf-8" />
-        <title>nestore | Welcome!</title>
+        <title>nestore</title>
         {/* <link rel="canonical" href="http://nestore-docs.vercel.app" /> */}
       </Head>
       <div className="container">
@@ -38,8 +38,8 @@ function HomepageHeader() {
           <Link
             className="button button--primary button--md"
             style={{marginLeft: '1rem', borderColor: '#fff', minWidth: '10rem'}}
-            to="/docs/category/examples">
-            Examples
+            to="https://github.com/pratiqdev/nestore">
+            GitHub
           </Link>
         </div>
       </div>

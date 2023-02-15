@@ -1,9 +1,30 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-const {version} = require('./package.json')
+// const {version} = require('./package.json')
+// const axios = require('axios')
+// const semverCompare = require('semver-compare')
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 // const darkCodeTheme = require('prism-react-renderer/themes/nightOwl');
+
+// let latestVersion = '0.0.1';
+// let knownLatestVersion = '0.0.45';
+
+// (async () => {
+//   try{
+
+//     //@ts-ignore
+//     let res = axios.get('https://registry.npmjs.org/nestore')
+    
+//     let versions = Object.keys(res.versions)
+//     let sortedVersions = versions.sort(semverCompare)
+//     latestVersion = sortedVersions.pop() ?? knownLatestVersion
+
+//   }catch(err){
+//     latestVersion = knownLatestVersion
+//     console.log('Error fetching latest npm package version:', err)
+//   }
+// })()
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -74,11 +95,11 @@ const config = {
           //   label: 'Tutorial',
           // },
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/pratiqdev/nestore',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/pratiqdev/nestore',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -137,7 +158,7 @@ const config = {
       announcementBar: {
         id: 'alpha',
         content:
-          `Nestore is still in beta (${version}) - watch out for version '^1.0.0' at <a href="https://github.com/pratiqdev/nestore">GitHub/nestore</a>`,
+          `Nestore is still in beta - watch for v1.0.0 on <a href="https://github.com/pratiqdev/nestore">GitHub</a>`,
         backgroundColor: '#eef',
         textColor: '#002',
         isCloseable: true,
