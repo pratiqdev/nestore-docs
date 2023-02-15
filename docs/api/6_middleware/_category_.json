@@ -1,10 +1,10 @@
 {
-  "position": 100,
-  "label": "Adapters",
+  "position": 6,
+  "label": "Middleware",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
-    "title": "Adapters"
+    "title": "Middleware"
   }
 }

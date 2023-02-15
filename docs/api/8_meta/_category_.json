@@ -1,10 +1,10 @@
 {
-  "position": 100,
-  "label": "Views",
+  "position": 1000,
+  "label": "Meta",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
-    "title": "Views"
+    "title": "Meta"
   }
 }

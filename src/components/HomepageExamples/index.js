@@ -90,6 +90,21 @@ const myStore = await nestore({
 })
 `,
   },
+  {
+    title: `Beta - PR's welcome!`,
+    description: (
+      <>
+        Nestore is still in beta, contributions / issues / pull-requests are welcome!
+      </>
+    ),
+    link: 'https://github.com/pratiqdev/nestore',
+    code: 
+`// Repo:            https://github.com/pratiqdev/nestore/
+// Bugs:            https://github.com/pratiqdev/nestore/issues
+// NPM:             https://npmjs.com/package/nestore
+// Version:         0.0.47
+`,
+  },
 
   
   
