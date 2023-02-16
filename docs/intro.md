@@ -62,6 +62,7 @@ each new feature. The client-side framework connectors will be provided as separ
 
 
 ### Concerns
+- How can `get('a.**.b')` be used to return multiple items that match the pattern? (via middleware)
 - Setter functions will only emit events for the new keys in the store - not any values that no longer exist
 - Getter functions are unnecessary (can use nst.get() to get entire store - same execution time) but should still be supported
 ```ts
