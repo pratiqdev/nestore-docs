@@ -7,8 +7,7 @@ title: Create a Store
 ## Initial Store
 
 
-Invoke nestore with an object with any keys/values to setup the initial state. See 
-**[api/store](/docs/api/configuration/store)** for more details
+Invoke nestore with an **object** with any **keys/values** to setup the initial state. 
 
 ```jsx title="myStore.js"
 import nestore from 'nestore'
@@ -28,8 +27,7 @@ export default nst
 
 ## Mutators
 
-You can also register 'in-store' mutators to keep logic and state in a central location. See 
-**[api/store/mutators](/docs/api/store/mutators)** for more details
+You can also register 'in-store' mutators to keep logic and state in a central location. 
 
 ```jsx
 const nst = nestore({
@@ -80,7 +78,7 @@ const user = await nst.login('AliceAware11', 'password1234')
 
 Listeners can also be registered directly in the store with the `$` prefix. All listeners are 
 invoked with an object containing the `path` and `key` of the value that changed, as well as the 
-new value. See **[api/store/listeners](/docs/api/store/listeners)** for more details
+new value. 
 
 ```jsx
 const nst = nestore({
