@@ -1,0 +1,20 @@
+---
+sidebar_position: 5
+sidebar_label: Reset the Store
+---
+
+# Reset the Store
+
+Nestore can be reset to its initial state with the `.reset()` function.
+All keys within the **new** store will emit a change event - values that
+no longer exist in the store will not emit events.
+
+```tsx
+import nst from 'myStore.js'
+
+nst.onAny(path => {
+    console.log('Path reset:', path)
+})
+
+nst.reset()
+```

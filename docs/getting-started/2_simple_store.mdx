@@ -1,0 +1,42 @@
+---
+sidebar_position: 4
+sidebar_label: Simple Store
+---
+
+# Setup a Simple Store
+
+Setup is super easy - create, export and use your store. 
+
+
+```tsx title="store.ts"
+import nestore from 'nestore'
+
+const nst = nestore({
+
+  logged_in: false,
+  user: {
+    name: null,
+    avatar: null,
+  },
+
+  login: (NST, [name, password]) => {
+    NST.set('logged_in', true)
+    NST.store.user = name
+  }
+
+})
+
+export default nst
+```
+
+```tsx title="app.ts"
+import nst from './store.js'
+
+nst.once('logged_in', ({ key, value, path }) => {
+  log(`Welcome back ${ nst.store.user.name }!`)
+})
+
+await nst.login('BillyBrown123', 'pass1234')
+
+nst.store.someValue = Date.now()
+```

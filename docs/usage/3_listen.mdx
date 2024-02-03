@@ -1,0 +1,75 @@
+---
+sidebar_position: 4
+sidebar_label: Register Listeners
+---
+
+# Register Listeners
+
+We can register event listeners on any values within the store.
+
+```tsx
+import nst from 'myStore.js'
+
+nst.on('thisKey', ({ key, value, path }) => {
+    // key, value and path of the changed key/value
+    log(`${ key } was changed to ${ value }...`)
+})
+```
+
+## Convenience methods
+
+There are many convenience methods for setting event listeners with Nestore.
+
+```tsx
+import nst from 'myStore.js'
+
+// infinite events
+nst.on('event-name', ({ key, value, path }) => {})
+
+// single event
+nst.once('event-name', ({ key, value, path }) => {})
+
+// multiple events
+nst.many('event-name', 5, ({ key, value, path }) => {})
+
+// any event
+nst.onAny(({ eventName }) => {})
+```
+
+## In Store Listeners
+
+We an also register listeners directly in the store to keep logic centralized
+
+```jsx
+import nestore from 'nestore'
+
+const nst = nestore({
+    logged_in: false,
+    user_name: null,
+
+    login: async (NST, [name, pwrd]) => {
+        // ...
+    },
+
+    $user_name: ({ value }) => {
+        console.log(`The user ${value} has logged in!`)
+    },
+
+})
+```
+
+## Wildcards
+
+Nestore supports wildcards for events and listeners
+
+```tsx
+import nst from 'myStore.js'
+
+nst.on('user.*.messages', ({ key, value, path }) => {
+    log(`User at ${ path } has new messages ${ value }...`)
+})
+
+nst.on('user.**', ({ key, value, path }) => {
+    log(`User data updated: ${ path }:${ value }`)
+})
+```

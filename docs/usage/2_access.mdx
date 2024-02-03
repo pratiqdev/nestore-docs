@@ -9,11 +9,6 @@ All values are available through the store except in-store-mutators. Use the get
 programmatic access to paths, or access the values directly through the store. Later we will react 
 to changes with events.
 
-:::note
-The store is a mutable object with persistent references. Any direct access to `nst.store.path`
-or `nst.store[path]` will return that value with its current reference. Be cautious of unintended updates to store values 
-by reference.
-:::
 
 ```jsx title="myStore.js"
 import nst from './myStore.js'
@@ -29,6 +24,24 @@ console.log(nst.store.captains_name)
 ```
 
 
+:::note
+The store is a mutable object with persistent references. Any direct access to `nst.store.path`
+or `nst.store[path]` will return that value with its current reference. 
+Be cautious of unintended updates to store values by reference.
+:::
+
+
+## Access Mutator Functions
+
+Nestore exposes the stores top level functions as `mutators`.
+
+```tsx
+import nst from  './myStore.js'
+
+const user = await nst.login('AliceAware11', 'password1234')
+```
+
+<!--
 
 1. install
 1. create basic store in store.js
@@ -54,3 +67,5 @@ console.log(nst.store.captains_name)
 1. move that async login function into the store as `login: async (NST, [name, pwrd]) => { ... },`
 1. trigger that async function with `nst.login('', '')`
 1. expect listener callback to be invoked `nst.on('user_name', ({ key, value }) => { ... })`
+
+-->

@@ -10,12 +10,18 @@ import meta from '@site/meta.js'
 # Installing the Package
 
 
-Install the package with your preferred package manager, or just use **[Pnpm](https://pnpm.io/)**!
+Install the package with your preferred package manager
 
 
 <Tabs>
 
-<TabItem value="pnpm" label="Pnpm" default>
+<TabItem value="yarn" label="Yarn" default>
+<pre>
+$ yarn add {meta.npm_package_path}
+</pre>
+</TabItem>
+
+<TabItem value="pnpm" label="Pnpm" >
 <pre>
 $ pnpm add {meta.npm_package_path}
 </pre>
@@ -27,11 +33,6 @@ $ npm install {meta.npm_package_path}
 </pre>
 </TabItem>
 
-<TabItem value="yarn" label="Yarn" >
-<pre>
-$ yarn add {meta.npm_package_path}
-</pre>
-</TabItem>
 
 
 </Tabs>
@@ -41,9 +42,9 @@ Or request the package from a cdn
 <script src="https://unpkg.com/nestore"></script>
 ```
 
-Nestore depends on `lodash-es` and `eventemitter2`
+Nestore `nestore@0.0.47` currently depends on `lodash-es` and `eventemitter2`
 
 :::tip New deployment available
 The original package `nestore@1.1.44` has been deprecated and removed from npm and will be replaced with `nestore@0.0.45`
 and will follow standard semantic-versioning practices starting with `v0.0.45`
-:::
+:::s

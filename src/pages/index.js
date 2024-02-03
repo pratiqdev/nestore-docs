@@ -26,7 +26,7 @@ function HomepageHeader() {
           <Link
             className="button button--primary button--md"
             style={{marginRight: '1rem', borderColor: '#fff', minWidth: '10rem'}}
-            to="/docs/intro">
+            to="/docs/getting-started/intro">
             Introduction
           </Link>
           <Link

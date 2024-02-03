@@ -1,0 +1,16 @@
+---
+sidebar_position: 4
+sidebar_label: Remove Keys
+---
+
+# Remove Keys
+
+Assigning a value of `null` or `undefined` will not remove values from the store.
+Use `nst.remove()` to delete keys and values from the store completely.
+
+```tsx
+import nst from 'myStore.js'
+
+nst.remove('thisKeyValue')
+nst.remove('otherKeyValue')
+```
